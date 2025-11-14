@@ -5,5 +5,5 @@ Guaranteed without AI.
 ## Run a solution
 
 ```shell
-swift run -q aoc25 <day> [<part>]
+swift run -q aoc25 <day> [--part <part>] <input-file>
 ```

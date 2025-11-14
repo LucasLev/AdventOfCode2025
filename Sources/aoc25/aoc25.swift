@@ -12,7 +12,10 @@ enum Parts: Int, ExpressibleByArgument {
 struct aoc25: ParsableCommand {
   @Argument(help: "Day to run (1-12).")
   public var day: Int
-  @Argument(help: "Part to run. 0 for all.")
+  @Argument(
+    help: "Path to the puzzle input to run the solution on. File is expected to be utf-8 encoded.")
+  var inputFile: String
+  @Option(help: "Part to run. 0 for all.")
   public var part: Parts = .all
 
   func validate() throws {
@@ -21,21 +24,24 @@ struct aoc25: ParsableCommand {
     }
   }
 
-  func run() {
+  func run() throws {
+    guard let input = try? String(contentsOfFile: inputFile, encoding: .utf8) else {
+      throw ValidationError("Couldn't find file \(inputFile)")
+    }
     switch part {
     case .all:
-      runPart1()
-      runPart2()
+      runPart1(input)
+      runPart2(input)
     case .part1:
-      runPart1()
+      runPart1(input)
     case .part2:
-      runPart2()
+      runPart2(input)
     }
   }
 
-  func runPart1() {
+  func runPart1(_ input: String) {
     do {
-      let result = try allDays[day - 1].part1(input: [""])
+      let result = try allDays[day - 1].part1(input: input)
       print("Part 1: \(result)")
     } catch DayError.NotImplemented {
       print("This day (\(day)) has no solution yet for part 1")
@@ -44,9 +50,9 @@ struct aoc25: ParsableCommand {
     }
   }
 
-  func runPart2() {
+  func runPart2(_ input: String) {
     do {
-      let result = try allDays[day - 1].part2(input: [""])
+      let result = try allDays[day - 1].part2(input: input)
       print("Part 2: \(result)")
     } catch DayError.NotImplemented {
       print("This day (\(day)) has no solution yet for part 2")
