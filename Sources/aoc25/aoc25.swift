@@ -12,11 +12,11 @@ enum Parts: Int, ExpressibleByArgument {
 struct aoc25: ParsableCommand {
   @Argument(help: "Day to run (1-12).")
   public var day: Int
+  @Option(help: "Part to run. 0 for all.")
+  public var part: Parts = .all
   @Argument(
     help: "Path to the puzzle input to run the solution on. File is expected to be utf-8 encoded.")
   var inputFile: String
-  @Option(help: "Part to run. 0 for all.")
-  public var part: Parts = .all
 
   func validate() throws {
     guard day >= 1 && day <= 12 else {
