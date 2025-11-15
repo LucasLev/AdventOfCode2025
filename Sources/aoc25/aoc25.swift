@@ -44,9 +44,9 @@ struct aoc25: ParsableCommand {
       let result = try allDays[day - 1].part1(input: input)
       print("Part 1: \(result)")
     } catch DayError.NotImplemented {
-      print("This day (\(day)) has no solution yet for part 1")
+      print("Day \(day) has no solution yet for part 1")
     } catch {
-      print("Unexpecte Error: \(error)")
+      print("Unexpected Error: \(error)")
     }
   }
 
@@ -55,9 +55,9 @@ struct aoc25: ParsableCommand {
       let result = try allDays[day - 1].part2(input: input)
       print("Part 2: \(result)")
     } catch DayError.NotImplemented {
-      print("This day (\(day)) has no solution yet for part 2")
+      print("Day \(day) has no solution yet for part 2")
     } catch {
-      print("Unexpecte Error: \(error)")
+      print("Unexpected Error: \(error)")
     }
   }
 }
