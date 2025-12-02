@@ -1,6 +1,6 @@
 /// A day of painful learning about what the modulo of a negative number can be.
 final class Day01: Day {
-  static func part1(input: String) throws -> Int {
+  func part1(input: String) throws -> Int {
     var tot = 0
     var currentPose = 50
     for line in input.split(separator: "\n") {
@@ -14,7 +14,7 @@ final class Day01: Day {
     return tot
   }
 
-  private static func findOffset(line: String) -> Int {
+  private func findOffset(line: String) -> Int {
     guard let rotation = line.first, let distance = Int(line.dropFirst()) else {
       return 0
     }
@@ -29,7 +29,7 @@ final class Day01: Day {
     }
   }
 
-  static func part2(input: String) throws -> Int {
+  func part2(input: String) throws -> Int {
     var tot = 0
     var currentPose = 50
     for line in input.split(separator: "\n") {

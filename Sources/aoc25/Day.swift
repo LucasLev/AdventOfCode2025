@@ -1,6 +1,6 @@
 protocol Day: Sendable {
-  static func part1(input: String) throws -> Int
-  static func part2(input: String) throws -> Int
+  func part1(input: String) throws -> Int
+  func part2(input: String) throws -> Int
 }
 
 enum DayError: Error {
@@ -8,11 +8,11 @@ enum DayError: Error {
 }
 
 extension Day {
-  static func part1(input: String) throws -> Int {
+  func part1(input: String) throws -> Int {
     throw DayError.NotImplemented
   }
 
-  static func part2(input: String) throws -> Int {
+  func part2(input: String) throws -> Int {
     throw DayError.NotImplemented
   }
 }
@@ -20,17 +20,17 @@ extension Day {
 struct EmptyDay: Day {
 }
 
-let allDays: InlineArray<12, Day.Type> = [
-  Day01.self,
-  EmptyDay.self,
-  EmptyDay.self,
-  EmptyDay.self,
-  EmptyDay.self,
-  EmptyDay.self,
-  EmptyDay.self,
-  EmptyDay.self,
-  EmptyDay.self,
-  EmptyDay.self,
-  EmptyDay.self,
-  EmptyDay.self,
+let allDays: InlineArray<12, Day> = [
+  Day01(),
+  EmptyDay(),
+  EmptyDay(),
+  EmptyDay(),
+  EmptyDay(),
+  EmptyDay(),
+  EmptyDay(),
+  EmptyDay(),
+  EmptyDay(),
+  EmptyDay(),
+  EmptyDay(),
+  EmptyDay(),
 ]
