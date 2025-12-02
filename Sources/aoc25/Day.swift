@@ -22,7 +22,7 @@ struct EmptyDay: Day {
 
 let allDays: InlineArray<12, Day> = [
   Day01(),
-  EmptyDay(),
+  Day02(),
   EmptyDay(),
   EmptyDay(),
   EmptyDay(),
