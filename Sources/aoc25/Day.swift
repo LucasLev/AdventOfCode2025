@@ -21,7 +21,7 @@ struct EmptyDay: Day {
 }
 
 let allDays: InlineArray<12, Day.Type> = [
-  EmptyDay.self,
+  Day01.self,
   EmptyDay.self,
   EmptyDay.self,
   EmptyDay.self,
