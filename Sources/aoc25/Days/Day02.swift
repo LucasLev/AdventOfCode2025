@@ -5,7 +5,7 @@ final class Day02: Day {
     for line in input.split(separator: ",") {
       let bounds = line.split(separator: "-", maxSplits: 1)
       guard let minBound = Int(bounds[0]), let maxBound = Int(bounds[1]) else {
-        throw DayError.NotImplemented
+        throw DayError.ParsingError
       }
       for i in minBound...maxBound {
         if isRepeated(input: i) {
@@ -29,7 +29,7 @@ final class Day02: Day {
     for line in input.split(separator: ",") {
       let bounds = line.split(separator: "-", maxSplits: 1)
       guard let minBound = Int(bounds[0]), let maxBound = Int(bounds[1]) else {
-        throw DayError.NotImplemented
+        throw DayError.ParsingError
       }
       for i in minBound...maxBound {
         let stri = String(i)

@@ -5,6 +5,7 @@ protocol Day: Sendable {
 
 enum DayError: Error {
   case NotImplemented
+  case ParsingError
 }
 
 extension Day {
@@ -23,7 +24,7 @@ struct EmptyDay: Day {
 let allDays: InlineArray<12, Day> = [
   Day01(),
   Day02(),
-  EmptyDay(),
+  Day03(),
   EmptyDay(),
   EmptyDay(),
   EmptyDay(),
