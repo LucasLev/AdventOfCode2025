@@ -26,7 +26,7 @@ let allDays: InlineArray<12, Day> = [
   Day02(),
   Day03(),
   Day04(),
-  EmptyDay(),
+  Day05(),
   EmptyDay(),
   EmptyDay(),
   EmptyDay(),
